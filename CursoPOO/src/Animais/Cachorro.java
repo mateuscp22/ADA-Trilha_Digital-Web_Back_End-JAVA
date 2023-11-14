@@ -2,6 +2,7 @@ package Animais;
 
 public class Cachorro {
     // Atributos
+    static int numCachoros;
     private String nome;
     private String cor;
     private int altura;
@@ -23,9 +24,18 @@ public class Cachorro {
         this.peso = peso;
         this.tamanhoDoRabo = tamanhoDoRabo;
         this.estadoDeEspirito = estadoDeEspirito;
+        numCachoros++;
     }
 
     // Metodos
+    public static int getNumCachorros() {
+        return numCachoros;
+    }
+
+    public static void setNumCachorros(int numCachoros) {
+        Cachorro.numCachoros = numCachoros;
+    }
+
     public String getNome() {
         return this.nome;
     }
@@ -66,16 +76,6 @@ public class Cachorro {
         this.tamanhoDoRabo = tamanhoDoRabo;
     }
 
-    /*
-     * public String getEstadoDeEspirito() {
-     * return this.estadoDeEspirito;
-     * }
-     * 
-     * public void setEstadoDeEspirito(String estadoDeEspirito) {
-     * this.estadoDeEspirito = estadoDeEspirito;
-     * }
-     */
-
     public void comer() {
     }
 
@@ -104,17 +104,15 @@ public class Cachorro {
                 break;
         }
 
-        /*
-         * if (acao.equals("carinho")) {
-         * estadoDeEspirito = "feliz";
-         * } else if (acao.equals("Vai dormir!")) {
-         * this.estadoDeEspirito = "bravo";
-         * } else {
-         * this.estadoDeEspirito = "neutro";
-         * }
-         */
-
         return estadoDeEspirito;
 
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " nome='" + getNome() + "'" +
+                "}";
+    }
+
 }
